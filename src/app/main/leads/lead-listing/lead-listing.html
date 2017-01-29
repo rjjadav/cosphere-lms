@@ -1,0 +1,205 @@
+<md-content id="lead-listing" class="full-height" layout="column" layout-padding>
+	<h2>Leads</h2>
+
+	<div layout="column" flex>
+		<md-list flex>
+			<md-list-item>
+				<div layout="row" layout-xs="column" layout-sm="column" flex>
+					<span flex="5">
+						<Strong>Sr. No</Strong>
+					</span>
+					<span flex="10">
+						<Strong>Date</Strong>
+					</span>
+					<span flex="20">
+						<strong>Customer Name</strong>
+					</span>
+					<span flex="20">
+						<strong>Lead Owner</strong>
+					</span>
+					<span flex="10">
+						<strong>Contact No</strong>
+					</span>
+					<span flex="10">
+						<strong>City</strong>
+					</span>
+					<span flex="10">
+						<strong>Budget</strong>
+					</span>
+					<span flex="15" layout="row">
+						<strong>Action</strong>
+					</span>
+				</div>
+			</md-list-item>
+			<md-divider></md-divider>
+
+			<md-list-item ng-class="{'selected md-whiteframe-5dp' : $index == listing.selectedUserIndex}" ng-repeat="lead in listing.leadsList" ng-click="null">
+				<div layout="column" flex>
+					<div layout="row" layout-xs="column" layout-sm="column" flex>
+						<span flex="5" ng-class="{'text-bold' : $index == listing.selectedUserIndex}">
+							{{$index+1}}
+						</span>
+						<span flex="10" ng-class="{'text-bold' : $index == listing.selectedUserIndex}">
+							{{lead.nextCallDate | date: 'dd-MM-yyyy'}}
+						</span>
+						<span flex="20" ng-class="{'text-bold' : $index == listing.selectedUserIndex}">
+							{{lead.name}}
+						</span>
+						<span flex="20" ng-class="{'text-bold' : $index == listing.selectedUserIndex}">
+							{{lead.leadOwner}}
+						</span>
+						<span flex="10" ng-class="{'text-bold' : $index == listing.selectedUserIndex}">
+							{{lead.phone}}
+						</span>
+						<span flex="10" ng-class="{'text-bold' : $index == listing.selectedUserIndex}">
+							{{lead.city}}
+						</span>
+						<span flex="10" ng-class="{'text-bold' : $index == listing.selectedUserIndex}">
+							{{lead.budget}}
+						</span>
+						<span flex="15" ng-class="{'text-bold' : $index == listing.selectedUserIndex}" layout="row" layout-align="center center">
+							<md-button class="md-primary" ng-click="listing.selectUserIndex($index)">
+								{{($index == listing.selectedUserIndex) ? 'Hide Details' : 'Show Details'}}
+							</md-button>
+						</span>
+					</div>
+
+					<div layout="row" class="expanded" ng-show="$index == listing.selectedUserIndex" flex layout-wrap>
+						<div flex="45" layout="row">
+							<span flex="33">Lead Creation Date</span>
+							<span flex="66">
+								<strong>
+									{{lead.leadCreationDate | date: 'dd-MM-yyyy'}}
+								</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Lead Status Update Date</span>
+							<span flex="66">
+								<strong>
+									{{lead.lastStatusUpdateDate | date: 'dd-MM-yyyy'}}
+								</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Lead Status Description</span>
+							<span flex="66">
+								<strong>{{lead.lastStatusDescription}}</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Next Step</span>
+							<span flex="66">
+								<strong>
+									{{lead.nextStep}}
+								</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Campaign</span>
+							<span flex="66">
+								<strong>{{lead.campaign}}</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Requirement</span>
+							<span flex="66">
+								<strong>{{lead.requirement}}</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Area</span>
+							<span flex="66">
+								<strong>{{lead.area}}</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Move-In Date</span>
+							<span flex="66">
+								<strong>{{lead.moveInDate}}</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Role</span>
+							<span flex="66">
+								<strong>{{lead.role}}</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Designation</span>
+							<span flex="66">
+								<strong>{{lead.Designation}}</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Category</span>
+							<span flex="66">
+								<strong>{{lead.tGCategory}}</strong>
+							</span>
+						</div>
+						
+						<div flex="45" layout="row">
+							<span flex="33">Category</span>
+							<span flex="66">
+								<strong>{{lead.tGCategory}}</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Work</span>
+							<span flex="66">
+								<strong>{{lead.workShortCode}}</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Company Name</span>
+							<span flex="66">
+								<strong>{{lead.companyName}}</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Work Description</span>
+							<span flex="66">
+								<strong>{{lead.workLongDescription}}</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Email</span>
+							<span flex="66">
+								<strong>{{lead.emailId}}</strong>
+							</span>
+						</div>
+
+						<div flex="45" layout="row">
+							<span flex="33">Team Size</span>
+							<span flex="66">
+								<strong>{{lead.teamSize}}</strong>
+							</span>
+						</div>						
+						
+						<div layout="row" layout-align="end start" flex="100">
+							<md-button class="md-primary md-raised" ui-sref="app.edit-lead({leadId: lead.id})">Edit Details</md-button>
+						</div>
+					</div>
+					
+				</div>
+
+			<md-divider></md-divider>	
+			</md-list-item>
+
+		</md-list>
+	</div>
+</md-content>

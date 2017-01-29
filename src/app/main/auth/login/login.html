@@ -1,0 +1,46 @@
+<div id="login" class="flex-scrollable" layout="column" ms-scroll style="background: url('assets/images/login-bg.jpg') no-repeat; background-size: 100% 100%;">
+    <div id="login-form-wrapper" layout="column" layout-align="center center">
+        <div id="login-form" class="md-whiteframe-8dp">
+            <div class="logo md-accent-bg">
+                <img src="/assets/images/layer-logo.png">
+            </div>
+
+            <div class="title">Log in to your account</div>
+
+            <form name="loginForm" layout="column" flex>
+
+				<md-input-container flex>
+					<label>Username</label>
+					<input type="text" name="email" ng-model="login.auth.username" required />
+					<div ng-messages="loginForm.email.$error">
+						<div ng-message="required">Username field is required</div>
+					</div>
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Password</label>
+					<input type="password" name="password" ng-model="login.auth.password" required/>
+					<div ng-messages="loginForm.password.$error">
+						<div ng-message="required">Password field is required</div>
+					</div>
+				</md-input-container>
+
+				<md-button 
+					class="md-primary md-raised" 
+					ng-disabled="loginForm.$invalid || login.loading" 
+					ng-click="login.loginUser(login.auth)">
+					Login
+
+					<div class="small-spinner" ng-if="login.loading">
+						<md-progress-circular md-mode='indeterminate' class="md-accent" md-diameter="120"></md-progress-circular>	
+					</div>
+				</md-button>
+            </form>
+
+            <!-- <div class="register" layout="row" layout-sm="column" layout-align="center center">
+                <span class="text" translate="LOGIN.DONT_HAVE_ACCOUNT">Don't have an account?</span>
+                <a href="javascript:void(0)" class="md-primary">Create an account</a>
+            </div> -->
+        </div>
+    </div>
+</div>

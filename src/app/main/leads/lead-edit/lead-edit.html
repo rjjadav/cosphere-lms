@@ -1,0 +1,144 @@
+<md-content id="lead-edit" layout-padding>
+	<h2>Edit Lead Details</h2>
+
+	<form name="leadForm" layout="row" flex layout-margin layout-wrap class="brad-2 md-whiteframe-2dp white-bg">
+		<md-input-container flex="45">
+			<label>Name</label>
+			<input type="text" name="name" ng-model="lead.leadDetails.name" required />
+			<div ng-messages="leadForm.name.$error">
+				<div ng-message="required">Name field is required</div>
+			</div>
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Email</label>
+			<input type="text" name="email" ng-model="lead.leadDetails.emailId" required />
+			<div ng-messages="leadForm.email.$error">
+				<div ng-message="required">Email field is required</div>
+			</div>
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Phone</label>
+			<input type="text" name="phone" ng-model="lead.leadDetails.phone" required />
+			<div ng-messages="leadForm.phone.$error">
+				<div ng-message="required">Phone field is required</div>
+			</div>
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Requirement</label>
+			<input type="text" name="requirement" ng-model="lead.leadDetails.requirement" required />
+			<div ng-messages="leadForm.requirement.$error">
+				<div ng-message="required">Requirement field is required</div>
+			</div>
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Area</label>
+			<input type="text" name="area" ng-model="lead.leadDetails.area" required />
+			<div ng-messages="leadForm.area.$error">
+				<div ng-message="required">Area field is required</div>
+			</div>
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>City</label>
+			<input type="text" name="city" ng-model="lead.leadDetails.city" required />
+			<div ng-messages="leadForm.city.$error">
+				<div ng-message="required">City field is required</div>
+			</div>
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Budget</label>
+			<input type="text" name="budget" ng-model="lead.leadDetails.budget" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Next Call</label>
+			<input type="text" name="nextCallDate" ng-model="lead.leadDetails.nextCallDate" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Next Step</label>
+			<input type="text" name="nextStep" ng-model="lead.leadDetails.nextStep" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Status</label>
+			<input type="text" name="statusIndicator" ng-model="lead.leadDetails.statusIndicator" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Status Reason</label>
+			<input type="text" name="statusIndicatorReason" ng-model="lead.leadDetails.statusIndicatorReason" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Last Status Updated Date</label>
+			<input type="text" name="lastStatusUpdateDate" ng-model="lead.leadDetails.lastStatusUpdateDate" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Last Status Description</label>
+			<input type="text" name="lastStatusDescription" ng-model="lead.leadDetails.lastStatusDescription" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Company Name</label>
+			<input type="text" name="companyName" ng-model="lead.leadDetails.companyName" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Team Size</label>
+			<input type="text" name="teamSize" ng-model="lead.leadDetails.teamSize" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Role</label>
+			<input type="text" name="role" ng-model="lead.leadDetails.role" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Designation</label>
+			<input type="text" name="designation" ng-model="lead.leadDetails.designation" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Work</label>
+			<input type="text" name="work" ng-model="lead.leadDetails.workShortCode" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Work Long Description</label>
+			<input type="text" name="workLongDescription" ng-model="lead.leadDetails.workLongDescription" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Category</label>
+			<input type="text" name="category" ng-model="lead.leadDetails.tGCategory" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Campaign</label>
+			<input type="text" name="campaign" ng-model="lead.leadDetails.campaign" required />
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Move-In Date</label>
+			<input type="text" name="moveInDate" ng-model="lead.leadDetails.moveInDate" required />
+		</md-input-container>
+
+		<div layout="row" flex="100" layout-align="center center">
+			<div flex="20" layout="row" layout-align="center center">
+				<md-button flex class="md-primary md-raised" ng-click="lead.saveLeadDetails(lead.leadDetails)" ng-disabled="leadForm.$invalid">
+					Save
+					<div class="small-spinner">
+						<md-progress-circular md-mode='indeterminate' class="md-accent" md-diameter="120"></md-progress-circular>	
+					</div>
+				</md-button>	
+			</div>
+		</div>
+	</form>
+</md-content>

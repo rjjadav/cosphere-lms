@@ -1,0 +1,66 @@
+<!-- <acme-navbar creation-date="toolbar.creationDate"></acme-navbar> -->
+
+<div layout="row" layout-align="start center">
+
+	<div layout="row" layout-align="start center" flex>
+
+		<div class="logo" layout="row" layout-align="start center">
+			<img src="assets/images/logo.jpg">
+		</div>
+
+		<div class="toolbar-separator"></div>
+		<!-- <ms-search-bar></ms-search-bar>  vm.toggleSidenav('navigation')-->
+		<md-button id="navigation-toggle" class="md-icon-button" ng-click="vm.lockLeft = !vm.lockLeft"
+				   aria-label="Toggle navigation" translate
+				   translate-attr-aria-label="TOOLBAR.TOGGLE_NAVIGATION">
+			<i class="fa fa-bars" aria-hidden="true"></i>
+		</md-button>
+
+		<!-- <div class="toolbar-separator"></div> -->
+	</div>
+
+	<div layout="row" layout-align="start center">
+		<!-- <md-menu-bar id="user-menu">
+			<md-menu md-position-mode="left bottom">
+				<md-button class="user-button" ng-click="$mdOpenMenu()"
+						   aria-label="User settings"
+						   translate translate-attr-aria-label="TOOLBAR.USER_SETTINGS">
+					<div layout="row" layout-align="space-between center">
+						<div class="avatar-wrapper">
+							<img md-menu-align-target class="avatar" src="assets/images/avatars/profile.jpg">
+						</div>
+						<span class="username" hide-xs>John Doe</span>
+								 <i class="material-icons">keyboard_arrow_down</i>
+					</div>
+				</md-button>
+
+				<md-menu-content width="3">
+					<md-menu-item class="md-indent" ui-sref="app.applications">
+						
+						<i class="material-icons" class="icon">account_circle</i>
+						<md-button>My Profile</md-button>
+					</md-menu-item>
+
+					<md-menu-item class="md-indent" ui-sref="app.mail">
+						<i class="material-icons" class="icon">email</i>
+						<md-button>Inbox</md-button>
+					</md-menu-item>
+
+					<md-menu-divider></md-menu-divider>
+
+					<md-menu-item class="md-indent">
+						<i class="material-icons" class="icon">exit_to_app</i>
+						<md-button ng-click="vm.logout()">Logout</md-button>
+					</md-menu-item>
+				</md-menu-content>
+			</md-menu>
+		</md-menu-bar> -->
+
+		<div class="toolbar-separator"></div>
+
+		<md-button id="quick-panel-toggle" class="md-icon-button" ng-click="toolbar.toggleSidenav('quick-panel')"
+				   aria-label="Toggle quick panel" translate translate-attr-aria-label="TOOLBAR.TOGGLE_QUICK_PANEL">
+			<i class="fa fa-list-ul" aria-hidden="true"></i>
+		</md-button>
+	</div>
+</div>
